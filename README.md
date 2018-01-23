@@ -23,15 +23,15 @@ FancyPaper is a little script that changes your wallpaper to a hot submission fr
   
   `python3 -m venv /path/to/new/virtual/environment`
   
-  Activate the environment:
+  3. Activate the environment:
   
   `source activate fancypaper`
 
-  Install the requirments(You should be in the repo's folder):
+  4. Install the requirments(You should be in the repo's folder):
 
   `pip install -r requirments`
   
-  And finnaly run:
+  5. And finnaly run:
 
   `sudo ./install.sh`
   
@@ -53,3 +53,7 @@ Go to your shell's config file (`.bashrc` | `.zshrc` etc..) and add these lines:
     #PRAW CONFIG
     export praw_client_id='Your client id'
     export praw_client_secret='Your client secret'
+
+Finnaly you can execute:
+
+`fancypaper`
