@@ -57,3 +57,12 @@ Go to your shell's config file (`.bashrc` | `.zshrc` etc..) and add these lines:
 Finnaly you can execute:
 
 `fancypaper`
+
+## Changing the subreddits
+If you want to change the subreddits which the wallpaper is selected from:
+
+Edit `src/main.py`
+
+Near the beggining you'll see a list of subreddit names.
+
+Add or remove whatever you want.
