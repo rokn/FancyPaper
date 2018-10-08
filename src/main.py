@@ -6,11 +6,22 @@ import subprocess
 import urllib.request
 from pathlib import Path
 
+CLIENT_ID='sEaKhcj7acvm1w'
+CLIENT_SECRET='szUCnRpN87urPDc-fOcPLddqxR0'
+
 USER_AGENT = 'User-Agent: rokn.github.io.fancypaper:v1.0.0 (by /u/ProgrammerAway)'
 
 subreddits = ['earthporn', 'wallpapers']
 
-reddit = praw.Reddit(user_agent=USER_AGENT)
+directory = Path(Path.home(), Path(".fancypaper"))
+defFilename = Path(directory, Path("current.jpg"))
+
+def setWallpaper(file):
+    subprocess.Popen(['feh', '--bg-scale', file])
+
+setWallpaper(defFilename)
+
+reddit = praw.Reddit(user_agent=USER_AGENT, client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 
 urls = []
 extensions = ('jpg', 'png')
@@ -24,7 +35,6 @@ for subreddit in subreddits:
 url = random.choice(urls)
 _, ext = os.path.splitext(url)
 
-directory = Path(Path.home(), Path(".fancypaper"))
 filename = Path(directory, Path("current" + ext))
 
 if not os.path.exists(directory):
@@ -32,4 +42,4 @@ if not os.path.exists(directory):
 
 urllib.request.urlretrieve(url, filename)
 
-p = subprocess.Popen(['feh', '--bg-scale', filename])
+setWallpaper(filename)
